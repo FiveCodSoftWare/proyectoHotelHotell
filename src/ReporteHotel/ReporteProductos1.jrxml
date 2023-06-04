@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProductos1" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="122fa14b-73bd-431c-af5f-f5b3a648eba3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CodigoProducto" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     producto.`nombreProducto` AS producto_nombreProducto,
+     producto.`descripcionProducto` AS producto_descripcionProducto,
+     producto.`unidadProducto` AS producto_unidadProducto,
+     producto.`precioProducto` AS producto_precioProducto,
+     producto.`precioCompra` AS producto_precioCompra,
+     producto.`stockProducto` AS producto_stockProducto,
+     producto.`ubicacionLugar` AS producto_ubicacionLugar
+FROM
+     `producto` producto
+Where
+  producto.`codigoProducto`=$P{CodigoProducto}]]>
+	</queryString>
+	<field name="producto_nombreProducto" class="java.lang.String"/>
+	<field name="producto_descripcionProducto" class="java.lang.String"/>
+	<field name="producto_unidadProducto" class="java.lang.String"/>
+	<field name="producto_precioProducto" class="java.math.BigDecimal"/>
+	<field name="producto_precioCompra" class="java.math.BigDecimal"/>
+	<field name="producto_stockProducto" class="java.lang.Integer"/>
+	<field name="producto_ubicacionLugar" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="270e5dee-56c8-4aa5-9713-fdd810f45477" x="296" y="81" width="169" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono: 974265233]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="1c5bfe2e-188c-424a-8b0f-09e33381a6b7" x="505" y="10" width="284" height="111"/>
+				<imageExpression><![CDATA["D:\\Nueva carpeta\\proyectoJava\\proyectoJavaHotel\\proyectoHotelHotell\\src\\ReporteHotel\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="55ef34a8-d769-488d-aab9-5d0c99b09897" x="275" y="21" width="140" height="25" forecolor="#FF0000"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOTEL  - LeaHOTEL]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="d0cbe621-5875-45e9-9941-3208b49e79e4" x="10" y="10" width="177" height="118"/>
+				<imageExpression><![CDATA["D:\\Nueva carpeta\\proyectoJava\\proyectoJavaHotel\\proyectoHotelHotell\\src\\ReporteHotel\\LogoHotel.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="3984197e-27ed-47ad-bddf-fdeb467103e2" x="296" y="56" width="130" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Av.Paujiles]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="525d4b7b-a87a-473c-88b6-f1a36bb4e803" x="422" y="22" width="51" height="20" forecolor="#000099"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.A.C]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="2b76dd90-07e7-4fd7-872e-caaa505d1ced" x="6" y="14" width="785" height="42" backcolor="#33FF33"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="777589df-900c-4e2d-b5bc-878f114bda5e" x="8" y="28" width="61" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ecfb7a9-18a0-44db-ba03-c6cc000cf840" x="88" y="26" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8f67a5c9-8c6b-4afa-973b-942835060f0d" x="220" y="26" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ae3f460-1e85-477f-85f4-a26276cea551" x="361" y="26" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7612e33a-2d6d-4bae-a906-803bcb60e1aa" x="496" y="28" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Compra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="062b7006-fd3e-4b45-9a86-86752d0d917b" x="640" y="26" width="47" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29268cb8-bf19-4873-b4c3-cb153a8bf91e" x="727" y="26" width="62" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ubicacion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="95f6774d-8f41-40b3-87ca-924d720f6729" x="10" y="11" width="61" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ab43bde2-9639-4237-b186-f842f8a5032e" x="90" y="11" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_descripcionProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2937fa94-a2e0-42ea-a293-cb4323078c83" x="222" y="11" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_unidadProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e080a4cb-85a1-4d0f-9afd-f1525941c412" x="363" y="11" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_precioProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8423e25b-5d44-434d-861c-be128fb2bf7a" x="498" y="11" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_precioCompra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cd90ed75-29a0-4d05-98d8-a31c8e71cd7c" x="642" y="11" width="47" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_stockProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="16143a99-a10b-4af0-8f18-bb1dd02361c0" x="740" y="11" width="62" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{producto_ubicacionLugar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

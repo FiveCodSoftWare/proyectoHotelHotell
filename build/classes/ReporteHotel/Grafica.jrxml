@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cdb3919c-2b5f-4a8f-8f00-e5040d922ece">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     producto.`nombreProducto` AS producto_nombreProducto,
+     producto.`stockProducto` AS producto_stockProducto
+FROM
+     `producto` producto]]>
+	</queryString>
+	<field name="producto_nombreProducto" class="java.lang.String"/>
+	<field name="producto_stockProducto" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="147" splitType="Stretch">
+			<image>
+				<reportElement uuid="1c5bfe2e-188c-424a-8b0f-09e33381a6b7" x="366" y="17" width="176" height="111"/>
+				<imageExpression><![CDATA["D:\\Nueva carpeta\\proyectoJava\\proyectoJavaHotel\\proyectoHotelHotell\\src\\ReporteHotel\\logo.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="d0cbe621-5875-45e9-9941-3208b49e79e4" x="17" y="17" width="196" height="111"/>
+				<imageExpression><![CDATA["D:\\Nueva carpeta\\proyectoJava\\proyectoJavaHotel\\proyectoHotelHotell\\src\\ReporteHotel\\LogoHotel.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="a6b3465e-7dad-4d80-9b61-f3b22db9bf01" x="187" y="101" width="195" height="27"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grafica de Productos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="314" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement uuid="09bfb8f6-63c6-4452-9bd0-4a6892907a1e" x="34" y="28" width="467" height="248"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{producto_stockProducto}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{producto_nombreProducto}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{producto_stockProducto}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

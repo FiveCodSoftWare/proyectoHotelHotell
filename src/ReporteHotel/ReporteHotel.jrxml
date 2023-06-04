@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteHotel" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06db87b2-13de-48ff-a65a-3daae5d9d9c5">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     habitacion.`idHabitacion` AS habitacion_idHabitacion,
+     habitacion.`HabitacionNumero` AS habitacion_HabitacionNumero,
+     habitacion.`HabitacionPiso` AS habitacion_HabitacionPiso,
+     habitacion.`idTipoHabitacion` AS habitacion_idTipoHabitacion,
+     habitacion.`HabitacionEsatdo` AS habitacion_HabitacionEsatdo,
+     tipohabitacion.`idTipoHabitacion` AS tipohabitacion_idTipoHabitacion,
+     tipohabitacion.`TipoHabitacion` AS tipohabitacion_TipoHabitacion,
+     tipohabitacion.`TipoHabitacionPrecio` AS tipohabitacion_TipoHabitacionPrecio,
+     tipohabitacion.`TipoHabitacionDescripcion` AS tipohabitacion_TipoHabitacionDescripcion
+FROM
+     `tipohabitacion` tipohabitacion INNER JOIN `habitacion` habitacion ON tipohabitacion.`idTipoHabitacion` = habitacion.`idTipoHabitacion`]]>
+	</queryString>
+	<field name="habitacion_idHabitacion" class="java.lang.Integer"/>
+	<field name="habitacion_HabitacionNumero" class="java.lang.Integer"/>
+	<field name="habitacion_HabitacionPiso" class="java.lang.String"/>
+	<field name="habitacion_idTipoHabitacion" class="java.lang.Integer"/>
+	<field name="habitacion_HabitacionEsatdo" class="java.lang.String"/>
+	<field name="tipohabitacion_idTipoHabitacion" class="java.lang.Integer"/>
+	<field name="tipohabitacion_TipoHabitacion" class="java.lang.String"/>
+	<field name="tipohabitacion_TipoHabitacionPrecio" class="java.lang.Double"/>
+	<field name="tipohabitacion_TipoHabitacionDescripcion" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="43c23207-b0f1-4d76-82b7-613ebf2d694a"/>
+				<staticText>
+					<reportElement x="20" y="20" width="308" height="43" forecolor="#FFFFFF" uuid="1dbd5609-cca0-48ae-aeb8-9b194cd70e0c"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Hotel Grand- LEA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="5141abd6-149d-4da1-8e67-39ed14a6cc2c"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Lista De Habitaciones]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="bea386b1-41c5-4a13-b7cb-249bafbf2da9"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="1" width="100" height="20" uuid="68773100-bddf-49b1-9654-660d8191dc3b"/>
+				<textElement>
+					<font size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Numero Habitacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="1" width="100" height="20" uuid="a4910765-e9dc-4f81-8aa1-e171ddaf9ad3"/>
+				<textElement>
+					<font size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Piso Habitacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="0" width="100" height="20" uuid="794c1b93-5ebe-4903-8c4a-46853f815ddf"/>
+				<textElement>
+					<font size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="1" width="100" height="20" uuid="cf30dc56-e751-4ee4-9890-6b04329dd1a4"/>
+				<textElement>
+					<font size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52">
+			<textField>
+				<reportElement x="16" y="16" width="100" height="20" uuid="f4439eb3-5d65-43a2-a334-c7f05ee30ee3"/>
+				<textFieldExpression><![CDATA[$F{habitacion_HabitacionNumero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="16" width="100" height="20" uuid="49f183da-967e-45e4-8111-220a57c04298"/>
+				<textFieldExpression><![CDATA[$F{habitacion_HabitacionPiso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="16" width="100" height="20" uuid="facce143-9c42-4278-8f0e-43dabd6db6b2"/>
+				<textFieldExpression><![CDATA[$F{tipohabitacion_TipoHabitacionPrecio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="16" width="100" height="20" uuid="67470a56-fd81-4751-b4f1-8d873abc940d"/>
+				<textFieldExpression><![CDATA[$F{tipohabitacion_TipoHabitacionDescripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="97e704b4-1dd6-4588-92f6-c10c2f3d81b1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina"+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="f8a65c69-3767-4dc9-9f01-1afc4cd379ab"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="0ca5a69b-9110-4091-8a5a-7897dd0ff711"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

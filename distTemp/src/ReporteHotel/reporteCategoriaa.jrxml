@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f3121e21-c8bc-4525-ba47-2489d3250eca">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     categoria.`CategoriaNombre` AS categoria_CategoriaNombre,
+     categoria.`CategoriaDescripcion` AS categoria_CategoriaDescripcion
+FROM
+     `categoria` categoria]]>
+	</queryString>
+	<field name="categoria_CategoriaNombre" class="java.lang.String"/>
+	<field name="categoria_CategoriaDescripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="144" splitType="Stretch">
+			<image>
+				<reportElement uuid="d0cbe621-5875-45e9-9941-3208b49e79e4" x="10" y="10" width="177" height="118"/>
+				<imageExpression><![CDATA["D:\\Nueva carpeta\\proyectoJava\\proyectoJavaHotel\\proyectoHotelHotell\\src\\ReporteHotel\\LogoHotel.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="55ef34a8-d769-488d-aab9-5d0c99b09897" x="166" y="21" width="140" height="25" forecolor="#FF0000"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOTEL  - LeaHOTEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="525d4b7b-a87a-473c-88b6-f1a36bb4e803" x="313" y="22" width="51" height="20" forecolor="#000099"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.A.C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="270e5dee-56c8-4aa5-9713-fdd810f45477" x="188" y="81" width="169" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono: 974265233]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="1c5bfe2e-188c-424a-8b0f-09e33381a6b7" x="383" y="10" width="163" height="111"/>
+				<imageExpression><![CDATA["D:\\Nueva carpeta\\proyectoJava\\proyectoJavaHotel\\proyectoHotelHotell\\src\\ReporteHotel\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="3984197e-27ed-47ad-bddf-fdeb467103e2" x="187" y="56" width="130" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Av.Paujiles]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="2b76dd90-07e7-4fd7-872e-caaa505d1ced" x="29" y="7" width="422" height="42" backcolor="#33FF33"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6154a7e4-c3a9-4614-89db-b906531cb1d9" x="45" y="14" width="153" height="27"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="81c78d35-22d0-4fda-9ea8-4f3761def93b" x="283" y="14" width="153" height="27"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement uuid="1bcfaa65-947b-4a4b-85fe-44e9386f6ace" x="45" y="4" width="153" height="27"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{categoria_CategoriaNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="987898a3-da86-46c1-913a-bda71551161c" x="283" y="4" width="153" height="27"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{categoria_CategoriaDescripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
